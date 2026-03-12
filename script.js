@@ -1,43 +1,68 @@
-const counterElement = document.getElementById('counterElement')
-const plus = document.getElementById('plus')
-const minus = document.getElementById('minus')
+// Get the counter number element from HTML
+const counter = document.getElementById("counter")
 
+// Get the plus button from HTML
+const plusBtn = document.getElementById("plus")
+
+// Get the minus button from HTML
+const minusBtn = document.getElementById("minus")
+
+// Starting number value
 let count = 0
 
-const updatedCounter = (value) => {
 
-    count = count + value
-    counterElement.innerText = count
+// Function to update number on screen
+function updateCounter(){
 
-    if(count >= 10 ){
-        plus.setAttribute('disabled', true)
+  // Show the number inside HTML
+  counter.innerText = count
 
-    }
 
-    else{
-        plus.removeAttribute('disabled', false)
-    }
+  // If number becomes 10
+  if(count === 10){
+    // Disable the plus button
+    plusBtn.disabled = true
+  }else{
+    // Otherwise enable it
+    plusBtn.disabled = false
+  }
 
-    // minus
 
-    if(count <= 0 ){
-        minus.setAttribute('disabled', true)
+  // If number becomes 0
+  if(count === 0){
+    // Disable minus button
+    minusBtn.disabled = true
+  }else{
+    // Otherwise enable it
+    minusBtn.disabled = false
+  }
 
-    }
-
-    else{
-        minus.removeAttribute('disabled', false)
-    }
 }
 
-plus.addEventListener('click', () =>{
 
-    updatedCounter(1)
-    
+// When user clicks PLUS button
+plusBtn.addEventListener("click", function(){
+
+  // Increase number by 1
+  count++
+
+  // Update the screen
+  updateCounter()
+
 })
 
-minus.addEventListener('click', () =>{
 
-    updatedCounter(-1)
-    
+// When user clicks MINUS button
+minusBtn.addEventListener("click", function(){
+
+  // Decrease number by 1
+  count--
+
+  // Update the screen
+  updateCounter()
+
 })
+
+
+// Run once when page loads
+updateCounter()

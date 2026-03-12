@@ -5,34 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/src/output.css" rel="stylesheet">
   <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
-  <title>Numbers Increase and Decrease</title>
+  <title>Counter App</title>
 </head>
-<body class="bg-gray-200">
 
-   <div class="container bg-gray-300 text-white text-center p-10 w-[900px] h-[500px] 
-   mx-auto mt-56 rounded-lg">
+<body class="bg-gray-100 flex items-center justify-center h-screen font-poppins">
 
-        <h1 class="text-black font-semibold text-2xl text-left">Number counter</h1>
+   <!-- Main counter box -->
+  <div class="bg-white p-10 rounded-xl shadow text-center">
 
-        <h3 id="counterElement" class="m-12 text-black font-semibold text-9xl" >0</h3>
+    <!-- Title -->
+    <h1 class="text-2xl font-semibold mb-6">Counter App</h1>
 
-        <div class="space-x-8 flex justify-center items-center">
+    <!-- Number display -->
+    <h2 id="counter" class="text-4xl font-bold mb-6">0</h2>
 
-            <div>
-                <button id="plus" class="cursor-pointer w-[300px] p-5 bg-white text-black font-bold 
-                text-7xl rounded-md shadow-lg disabled:opacity-50 disabled:cursor-not-allowed" 
-                > + </button>
-            </div>
+    <!-- Buttons container -->
+    <div class="flex gap-4 justify-center">
 
-            <div>
-                <button id="minus" class="cursor-pointer w-[300px] p-5 bg-white text-black font-bold 
-                text-7xl rounded-md shadow-lg disabled:opacity-50 disabled:cursor-not-allowed" 
-                > - </button>
-            </div>
-
-        </div> 
-
+      
+      <!-- Minus Button -->
+      <button id="minus"
+      class="bg-red-500 text-white text-lg px-5 py-2 rounded 
+      cursor-pointer shadow-sm disabled:bg-gray-400 disabled:opacity-50">
+      -
+    </button>
+    
+    <!-- Plus Button -->
+    <button id="plus"
+      class="bg-green-500 text-white text-lg px-5 py-2 rounded 
+      cursor-pointer shadow-sm disabled:bg-gray-400 disabled:opacity-50">
+      +
+    </button>
+    
     </div>
+
+  </div>
 
     <script src="/script.js"></script> 
 </body>
